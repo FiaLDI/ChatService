@@ -64,6 +64,21 @@ AUTHSERVICE
 | POST  | `/chats/:id/messages` | send a new message (:id)                |
 | DELETE| `/message/?id=`       | delete a message by ID                          |
 
+## SOCKET EVENTS
+
+#### Incoming Events
+| **Event**      | **Payload**       | **Description**                                                             | **Response via Callback** |
+| -------------- | ----------------- | --------------------------------------------------------------------------- | ------------------------- |
+| `join-chat`    | `chatId: string`  | Adds the user socket to a specific chat room.                               | —                         |
+| `leave-chat`   | `chatId: string`  | Removes the user socket from a specific chat room.                          | —                         |
+| `send-message` | `chat_id: string` | Emits a `new-message` event to everyone in the chat room.                   | —                         |
+| `disconnect`   | —                 | Automatically triggered when a user disconnects. Logs a disconnect message. | —                         |
+
+#### Outgoing Events 
+| **Event**     | **Payload** | **Description**                                                  |
+| ------------- | ----------- | ---------------------------------------------------------------- |
+| `new-message` | —           | Sent to all clients in the room when a new message is triggered. |
+
 
 ## EXAMPLE .env
 ```
