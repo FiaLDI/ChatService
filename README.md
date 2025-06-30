@@ -60,9 +60,9 @@ AUTHSERVICE
 
 |Method | Path                  | Description                                   |
 |-------|-----------------------|-----------------------------------------------|
-| GET   | `/chats/:id/messages` | Получение сообщений в чате по токену (:id)    |
-| POST  | `/chats/:id/messages` | Отправка сообщений в чат (:id)                |
-| DELETE| `/message/?id=`       | Удаление сообщения                            |
+| GET   | `/chats/:id/messages` | Fetch messages for a specific chat (:id)    |
+| POST  | `/chats/:id/messages` | send a new message (:id)                |
+| DELETE| `/message/?id=`       | delete a message by ID                          |
 
 
 ## EXAMPLE .env
